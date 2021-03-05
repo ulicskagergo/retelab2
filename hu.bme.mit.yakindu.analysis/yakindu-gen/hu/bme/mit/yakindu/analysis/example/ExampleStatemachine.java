@@ -56,7 +56,7 @@ public class ExampleStatemachine implements IExampleStatemachine {
 	private boolean initialized = false;
 	
 	public enum State {
-		main_region_Init,
+		main_region_init,
 		main_region_Black,
 		main_region_White,
 		$NullState$
@@ -108,8 +108,8 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		clearOutEvents();
 		for (nextStateIndex = 0; nextStateIndex < stateVector.length; nextStateIndex++) {
 			switch (stateVector[nextStateIndex]) {
-			case main_region_Init:
-				main_region_Init_react(true);
+			case main_region_init:
+				main_region_init_react(true);
 				break;
 			case main_region_Black:
 				main_region_Black_react(true);
@@ -164,8 +164,8 @@ public class ExampleStatemachine implements IExampleStatemachine {
 	public boolean isStateActive(State state) {
 	
 		switch (state) {
-		case main_region_Init:
-			return stateVector[0] == State.main_region_Init;
+		case main_region_init:
+			return stateVector[0] == State.main_region_init;
 		case main_region_Black:
 			return stateVector[0] == State.main_region_Black;
 		case main_region_White:
@@ -251,10 +251,10 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		timer.unsetTimer(this, 1);
 	}
 	
-	/* 'default' enter sequence for state Init */
-	private void enterSequence_main_region_Init_default() {
+	/* 'default' enter sequence for state init */
+	private void enterSequence_main_region_init_default() {
 		nextStateIndex = 0;
-		stateVector[0] = State.main_region_Init;
+		stateVector[0] = State.main_region_init;
 	}
 	
 	/* 'default' enter sequence for state Black */
@@ -276,8 +276,8 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		react_main_region__entry_Default();
 	}
 	
-	/* Default exit sequence for state Init */
-	private void exitSequence_main_region_Init() {
+	/* Default exit sequence for state init */
+	private void exitSequence_main_region_init() {
 		nextStateIndex = 0;
 		stateVector[0] = State.$NullState$;
 	}
@@ -301,8 +301,8 @@ public class ExampleStatemachine implements IExampleStatemachine {
 	/* Default exit sequence for region main region */
 	private void exitSequence_main_region() {
 		switch (stateVector[0]) {
-		case main_region_Init:
-			exitSequence_main_region_Init();
+		case main_region_init:
+			exitSequence_main_region_init();
 			break;
 		case main_region_Black:
 			exitSequence_main_region_Black();
@@ -317,19 +317,24 @@ public class ExampleStatemachine implements IExampleStatemachine {
 	
 	/* Default react sequence for initial entry  */
 	private void react_main_region__entry_Default() {
-		enterSequence_main_region_Init_default();
+		enterSequence_main_region_init_default();
 	}
 	
 	private boolean react() {
 		return false;
 	}
 	
-	private boolean main_region_Init_react(boolean try_transition) {
+	private boolean main_region_init_react(boolean try_transition) {
 		boolean did_transition = try_transition;
 		
 		if (try_transition) {
 			if (react()==false) {
-				did_transition = false;
+				if (sCInterface.start) {
+					exitSequence_main_region_init();
+					enterSequence_main_region_White_default();
+				} else {
+					did_transition = false;
+				}
 			}
 		}
 		return did_transition;
@@ -350,12 +355,7 @@ public class ExampleStatemachine implements IExampleStatemachine {
 						
 						enterSequence_main_region_Black_default();
 					} else {
-						if (sCInterface.start) {
-							exitSequence_main_region_Black();
-							enterSequence_main_region_White_default();
-						} else {
-							did_transition = false;
-						}
+						did_transition = false;
 					}
 				}
 			}
