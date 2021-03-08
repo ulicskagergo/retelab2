@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_6_kosO11Eeaky9HhW8GsWQ" specification="interface:&#xD;&#xA;in event start&#xD;&#xA;in event white&#xD;&#xA;in event black&#xD;&#xA;var whiteTime:integer = 60&#xD;&#xA;var blackTime:integer = 60" name="example">
+  <sgraph:Statechart xmi:id="_6_kosO11Eeaky9HhW8GsWQ" specification="interface:&#xD;&#xA;in event start&#xD;&#xA;in event feher&#xD;&#xA;in event fekete&#xD;&#xA;var feherIdo:integer = 60&#xD;&#xA;var feketeIdo:integer = 60" name="example">
     <regions xmi:id="_6_tyou11Eeaky9HhW8GsWQ" name="main region">
       <vertices xsi:type="sgraph:Entry" xmi:id="_6_tyrO11Eeaky9HhW8GsWQ">
         <outgoingTransitions xmi:id="_6_4xwe11Eeaky9HhW8GsWQ" target="_6_tyuO11Eeaky9HhW8GsWQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_6_tyuO11Eeaky9HhW8GsWQ" name="init" incomingTransitions="_6_4xwe11Eeaky9HhW8GsWQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_6_tyuO11Eeaky9HhW8GsWQ" name="Inicializalas" incomingTransitions="_6_4xwe11Eeaky9HhW8GsWQ">
         <outgoingTransitions xmi:id="_dL7kUO12Eeaky9HhW8GsWQ" specification="start" target="_No5UQO12Eeaky9HhW8GsWQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_MlHjEO12Eeaky9HhW8GsWQ" name="Black" incomingTransitions="_eo-xIO12Eeaky9HhW8GsWQ _z1AC8O12Eeaky9HhW8GsWQ">
-        <outgoingTransitions xmi:id="_k2PkoO12Eeaky9HhW8GsWQ" specification="black" target="_No5UQO12Eeaky9HhW8GsWQ"/>
-        <outgoingTransitions xmi:id="_z1AC8O12Eeaky9HhW8GsWQ" specification="after 1 s/&#xD;&#xA;blackTime-=1" target="_MlHjEO12Eeaky9HhW8GsWQ"/>
+      <vertices xsi:type="sgraph:State" xmi:id="_MlHjEO12Eeaky9HhW8GsWQ" name="Fekete" incomingTransitions="_eo-xIO12Eeaky9HhW8GsWQ _z1AC8O12Eeaky9HhW8GsWQ">
+        <outgoingTransitions xmi:id="_k2PkoO12Eeaky9HhW8GsWQ" specification="fekete" target="_No5UQO12Eeaky9HhW8GsWQ"/>
+        <outgoingTransitions xmi:id="_z1AC8O12Eeaky9HhW8GsWQ" specification="after 1 s/&#xD;&#xA;feketeIdo-=1" target="_MlHjEO12Eeaky9HhW8GsWQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_No5UQO12Eeaky9HhW8GsWQ" specification="" name="White" incomingTransitions="_dL7kUO12Eeaky9HhW8GsWQ _k2PkoO12Eeaky9HhW8GsWQ _26kFsO12Eeaky9HhW8GsWQ">
-        <outgoingTransitions xmi:id="_eo-xIO12Eeaky9HhW8GsWQ" specification="white" target="_MlHjEO12Eeaky9HhW8GsWQ"/>
-        <outgoingTransitions xmi:id="_26kFsO12Eeaky9HhW8GsWQ" specification="after 1 s/&#xD;&#xA;whiteTime-=1" target="_No5UQO12Eeaky9HhW8GsWQ"/>
+      <vertices xsi:type="sgraph:State" xmi:id="_No5UQO12Eeaky9HhW8GsWQ" specification="" name="Feher" incomingTransitions="_dL7kUO12Eeaky9HhW8GsWQ _k2PkoO12Eeaky9HhW8GsWQ _26kFsO12Eeaky9HhW8GsWQ">
+        <outgoingTransitions xmi:id="_eo-xIO12Eeaky9HhW8GsWQ" specification="feher" target="_MlHjEO12Eeaky9HhW8GsWQ"/>
+        <outgoingTransitions xmi:id="_26kFsO12Eeaky9HhW8GsWQ" specification="after 1 s/&#xD;&#xA;feherIdo-=1" target="_No5UQO12Eeaky9HhW8GsWQ"/>
       </vertices>
     </regions>
   </sgraph:Statechart>
@@ -52,7 +52,7 @@
           <styles xsi:type="notation:ShapeStyle" xmi:id="_6_3joe11Eeaky9HhW8GsWQ" fontName="Verdana" fillColor="15981773" lineColor="12632256"/>
           <styles xsi:type="notation:FontStyle" xmi:id="_6_3jou11Eeaky9HhW8GsWQ"/>
           <styles xsi:type="notation:BooleanValueStyle" xmi:id="_6_4KtO11Eeaky9HhW8GsWQ" name="isHorizontal" booleanValue="true"/>
-          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_6_4xwO11Eeaky9HhW8GsWQ" x="60" y="-3"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_6_4xwO11Eeaky9HhW8GsWQ" x="9" y="-3"/>
         </children>
         <children xmi:id="_MlJ_UO12Eeaky9HhW8GsWQ" type="State" element="_MlHjEO12Eeaky9HhW8GsWQ">
           <children xsi:type="notation:DecorationNode" xmi:id="_MlJ_VO12Eeaky9HhW8GsWQ" type="StateName">
@@ -110,6 +110,7 @@
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_6_6m8e11Eeaky9HhW8GsWQ" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_6_6m8-11Eeaky9HhW8GsWQ" fontName="Verdana"/>
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_6_6m8u11Eeaky9HhW8GsWQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_SJBusIAxEeuhpIqXKP1_yA" id="(0.5,0.5)"/>
     </edges>
     <edges xmi:id="_dL8ycO12Eeaky9HhW8GsWQ" type="Transition" element="_dL7kUO12Eeaky9HhW8GsWQ" source="_6_3joO11Eeaky9HhW8GsWQ" target="_No7wgu12Eeaky9HhW8GsWQ">
       <children xsi:type="notation:DecorationNode" xmi:id="_dL9Zge12Eeaky9HhW8GsWQ" type="TransitionExpression">
@@ -119,6 +120,7 @@
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_dL8yce12Eeaky9HhW8GsWQ" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_dL9ZgO12Eeaky9HhW8GsWQ" fontName="Verdana"/>
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_dL8ycu12Eeaky9HhW8GsWQ" points="[-5, 37, -7, -71]$[-5, 132, -7, 24]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_SJCVwIAxEeuhpIqXKP1_yA" id="(0.5,0.5)"/>
     </edges>
     <edges xmi:id="_eo-xIe12Eeaky9HhW8GsWQ" type="Transition" element="_eo-xIO12Eeaky9HhW8GsWQ" source="_No7wgu12Eeaky9HhW8GsWQ" target="_MlJ_UO12Eeaky9HhW8GsWQ">
       <children xsi:type="notation:DecorationNode" xmi:id="_eo-xJe12Eeaky9HhW8GsWQ" type="TransitionExpression">
